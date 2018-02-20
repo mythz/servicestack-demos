@@ -53,9 +53,9 @@ namespace demo
             return new { Path = request.Path };
         }
     }
-
+    
     [Restrict(VisibilityTo = RequestAttributes.None)]
-    [FallbackRoute("/{Path*}")]
+    [FallbackRoute("/{Path*}", Matches="AcceptsHtml")]
     public class FallbackRequest
     {
         public string Path { get; set; }
